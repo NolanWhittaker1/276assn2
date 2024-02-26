@@ -15,11 +15,12 @@
     flex-wrap: wrap;
     align-items: flex-start;
     flex-direction: row;
-    background: purple;
+    background: rgb(198, 194, 198);
 }
 
 #main > div {
-    background-color: pink;
+    background-color: white;
+    border-color: black;
     margin: 10px;
     display: flex;
     flex-direction: column;
