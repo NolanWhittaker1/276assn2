@@ -5,4 +5,7 @@ import java.util.List;
 
 public interface StudentRepository extends JpaRepository<Student, Integer> {
     List<Student> findByName(String name);
+    void deleteById(int sid);
+    Student findById(int sid);
+    
 }

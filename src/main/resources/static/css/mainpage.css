@@ -5,15 +5,17 @@
     height: 10vh;
     width: 100vw;
     justify-content: center;
+    align-items: center;
 }
 
 #main {
-    height: 90vh;
+    height: fit-content;
     width: 100vw;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
     flex-direction: row;
+    background: purple;
 }
 
 #main > div {
@@ -22,33 +24,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;     
-    justify-content: flex-end;
+    justify-content: center;
     padding: 5px;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-}
-
-span {
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-between;
-}
-button {
-    display: none;
-    width: 40%;
-    height: auto;
-    font-size: small;
-    text-align: center;
-    max-width: 10vw;
-}
-
-#buttons {
-    display: none;
-}
-
-#main > div:hover #buttons {
-    display: flex;
-    animation: fade-in 5s;
 }
 
 h2 {

@@ -12,6 +12,7 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <script src="/js/main.js" defer></script>
   </head>
   <body>
     <section id="title">
@@ -23,12 +24,48 @@
         th:style="'width: ' + ${student.weight} + 'px; height: ' + ${student.height} + 'px;'"
       >
         <h2 th:text="${student.name}"></h2>
-        <h2 th:text="${student.gpa}"></h2>
-        <span id="buttons">
-          <button type="button" class="btn btn-primary">?</button>
-          <button type="button" class="btn btn-danger">X</button>
-        </span>
       </div>
+    </section>
+    <section id="table">
+      <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Weight</th>
+            <th scope="col">Height</th>
+            <th scope="col">GPA</th>
+            <th scope="col" style="float:right"><a 
+              class="btn btn-success" 
+              href="/studentAdd.html" 
+              text="Hello :3"
+              >Add a new Student!</a>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="student:${stu}">
+          <td th:text="${student.sid}"></td>
+          <td th:text="${student.name}"></td>
+          <td th:text="${student.weight}"></td>
+          <td th:text="${student.height}"></td>
+          <td th:text="${student.gpa}"></td>
+          <td> <a 
+            class="btn btn-danger btn-xs" 
+            th:href="@{/delete/} + ${student.sid}" 
+            th:text="'X'" 
+            onclick="return confirm('Are you sure?')"></a>
+            <a 
+            class="btn btn-primary btn-xs" 
+            th:href="@{/edit/} + ${student.sid}" 
+            th:text="'Edit'" 
+            ></a>
+          </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     </section>
   </body>
 </html>
